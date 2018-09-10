@@ -45,22 +45,22 @@
 <!--end::Divider-->
 
 <!--begin::Options-->
-<div class="m-login__options">
-	<a href="javascript:;" mat-raised-button color="primary">
+<div class="m-login__options" (click)="signInWithFB()">
+	<a mat-raised-button color="primary">
 			<span>
 				<i class="fab fa-facebook-f"></i>&nbsp;
 				<span>Facebook</span>
 			</span>
 	</a>
 
-	<a href="javascript:;" mat-raised-button color="accent">
+	<a mat-raised-button color="accent">
 			<span>
 				<i class="fab fa-twitter"></i>&nbsp;
 				<span>Twitter</span>
 			</span>
 	</a>
 
-	<a href="javascript:;" mat-raised-button color="warn">
+	<a mat-raised-button color="warn" (click)="signInWithGoogle()">
 			<span>
 				<i class="fab fa-google"></i>&nbsp;
 				<span>Google</span>

@@ -46,10 +46,31 @@ import { MenuAsideService } from './core/services/layout/menu-aside.service';
 import { LayoutRefService } from './core/services/layout/layout-ref.service';
 import { SplashScreenService } from './core/services/splash-screen.service';
 import { DataTableService } from './core/services/datatable.service';
+import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from "angularx-social-login";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 	// suppressScrollX: true
 };
+
+let config = new AuthServiceConfig([
+	{
+		id: GoogleLoginProvider.PROVIDER_ID,
+		provider: new GoogleLoginProvider('624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com')
+	},
+	{
+		id: FacebookLoginProvider.PROVIDER_ID,
+		provider: new FacebookLoginProvider('561602290896109')
+	},
+	{
+		id: LinkedInLoginProvider.PROVIDER_ID,
+		provider: new LinkedInLoginProvider('78iqy5cu2e1fgr')
+	}
+]);
+
+export function provideConfig() {
+	return config;
+}
 
 @NgModule({
 	declarations: [AppComponent],
@@ -68,6 +89,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 		NgbModule.forRoot(),
 		TranslateModule.forRoot(),
 		MatProgressSpinnerModule,
+		SocialLoginModule,
 	],
 	providers: [
 		AclService,
@@ -89,7 +111,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 			provide: PERFECT_SCROLLBAR_CONFIG,
 			useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
 		},
-
+		{
+			provide: AuthServiceConfig,
+			useFactory: provideConfig
+		},
 		// template services
 		SubheaderService,
 		HeaderService,

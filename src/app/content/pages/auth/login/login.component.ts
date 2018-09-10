@@ -17,6 +17,9 @@ import { NgForm } from '@angular/forms';
 import * as objectPath from 'object-path';
 import { TranslateService } from '@ngx-translate/core';
 import { SpinnerButtonOptions } from '../../../partials/content/general/spinner-button/button-options.interface';
+import { AuthService } from "angularx-social-login";
+import { FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider } from "angularx-social-login";
+import { SocialUser } from "angularx-social-login";
 
 @Component({
 	selector: 'm-login',
@@ -29,6 +32,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 	@HostBinding('class') classes: string = 'm-login__signin';
 	@Output() actionChange = new Subject<string>();
 	public loading = false;
+
+	private user: SocialUser;
+	private loggedIn: boolean;
 
 	@Input() action: string;
 
@@ -49,9 +55,11 @@ export class LoginComponent implements OnInit, OnDestroy {
 		private router: Router,
 		public authNoticeService: AuthNoticeService,
 		private translate: TranslateService,
-		private cdr: ChangeDetectorRef
+		private cdr: ChangeDetectorRef,
+		private socialauthService: AuthService
 	) {}
 
+	
 	submit() {
 		this.spinner.active = true;
 		if (this.validate(this.f)) {
@@ -75,6 +83,10 @@ export class LoginComponent implements OnInit, OnDestroy {
 			<strong>demo</strong> to continue.`;
 			this.authNoticeService.setNotice(initialNotice, 'success');
 		}
+		this.socialauthService.authState.subscribe((user) => {
+			this.user = user;
+			this.loggedIn = (user != null);
+		});
 	}
 
 	ngOnDestroy(): void {
@@ -118,4 +130,25 @@ export class LoginComponent implements OnInit, OnDestroy {
 		this.action = 'register';
 		this.actionChange.next(this.action);
 	}
+
+ 
+	signInWithGoogle(): void {
+		this.socialauthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+
+		console.log("google");
+	}
+	
+	signInWithFB(): void {
+		this.socialauthService.signIn(FacebookLoginProvider.PROVIDER_ID);
+		//this.socialauthService.signIn("457534721401204");
+	}
+	
+	signInWithLinkedIn(): void {
+		this.socialauthService.signIn(LinkedInLoginProvider.PROVIDER_ID);
+	}  
+	
+	signOut(): void {
+		this.socialauthService.signOut();
+	}
+	
 }
