@@ -62,6 +62,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 	
 	submit() {
 		this.spinner.active = true;
+		console.log(this.model);
 		if (this.validate(this.f)) {
 			this.authService.login(this.model).subscribe(response => {
 				if (typeof response !== 'undefined') {
@@ -133,9 +134,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 
  
 	signInWithGoogle(): void {
-		this.socialauthService.signIn(GoogleLoginProvider.PROVIDER_ID);
-
-		console.log("google");
+		console.log(this.socialauthService.signIn(GoogleLoginProvider.PROVIDER_ID));
+		this.router.navigate(['/']);
+		this.cdr.detectChanges();
 	}
 	
 	signInWithFB(): void {
