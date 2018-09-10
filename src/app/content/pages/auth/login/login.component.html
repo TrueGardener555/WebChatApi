@@ -7,7 +7,7 @@
 <m-auth-notice></m-auth-notice>
 
 <!--begin::Form-->
-<form class="m-login__form m-form" name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
+<!-- <form class="m-login__form m-form" name="form" (ngSubmit)="f.form.valid && submit()" #f="ngForm" novalidate>
 	<div class="form-group">
 		<mat-form-field>
 			<mat-label>Email</mat-label>
@@ -22,26 +22,26 @@
 				   [(ngModel)]="model.password" #password="ngModel" required>
 		</mat-form-field>
 	</div>
-</form>
+</form> -->
 <!--end::Form-->
 
 <!--begin::Action-->
-<div class="m-login__action m-login__action--fit">
+<!-- <div class="m-login__action m-login__action--fit">
 	<a href="javascript:;" (click)="forgotPasswordPage($event)" class="m-link">
 		<span translate="AUTH.GENERAL.FORGOT_BUTTON">Forgot Password?</span>
 	</a>
 	<m-spinner-button [options]="spinner" (click)="submit()">{{'AUTH.LOGIN.BUTTON' | translate}}</m-spinner-button>
-</div>
+</div> -->
 <!--end::Action-->
 
 <!--begin::Divider-->
-<div class="m-login__form-divider">
+<!-- <div class="m-login__form-divider">
 	<div class="m-divider">
 		<span></span>
 		<span translate="AUTH.GENERAL.OR">OR</span>
 		<span></span>
 	</div>
-</div>
+</div> -->
 <!--end::Divider-->
 
 <!--begin::Options-->
