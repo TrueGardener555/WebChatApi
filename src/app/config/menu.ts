@@ -455,15 +455,116 @@ export class MenuConfig implements ConfigModel {
 				self: {},
 				items: [
 					{
+						title: 'CRETA',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-interface-7',
+						submenu: [
+						]
+					},
+					{section: 'Main Pages'},
+					{
 						title: 'Dashboard',
 						desc: 'Some description goes here',
 						root: true,
 						icon: 'flaticon-line-graph',
 						page: '/',
-						badge: {type: 'm-badge--danger', value: '2'},
 						translate: 'MENU.DASHBOARD'
 					},
-					{section: 'Tools'},
+					{
+						title: 'Audience',
+						root: true,
+						page: '/subscribers',
+						icon: 'flaticon-profile-1',
+						translate: 'MENU.AUDIENCE'
+					},
+					{
+						title: 'Live Chat',
+						root: true,
+						page: '/chat',
+						icon: 'flaticon-chat-1',
+						translate: 'MENU.LIVECHAT'
+					},
+					{
+						title: 'Growth Tools',
+						root: true,
+						page: '/growth-tools',
+						icon: 'flaticon-graphic-2',
+						translate: 'MENU.GROWTHTOOL'
+					},
+					{
+						title: 'Broadcasting',
+						root: true,
+						bullet: 'dot',
+						icon: 'flaticon-share',
+						translate: 'MENU.BROADCASTING',
+						submenu: [
+							{
+								title: 'Menu',
+								page: '/posting',
+								translate: 'MENU.BROADCAST',
+							},
+							{
+								title: 'Sidenav',
+								page: '/autoposting',
+								translate: 'MENU.AUTOPOST',
+							},
+						]
+					},
+					{
+						title: 'Automation',
+						root: true,
+						icon: 'flaticon-interface-5',
+						translate: 'MENU.AUTOMATION',
+						submenu: [
+							{
+								page: '/automation/menu/view',
+								translate: 'MENU.MAINMENU',
+							},
+							{
+								page: '/automation/default',
+								translate: 'MENU.DEFAULTREPLY',
+							},
+							{
+								page: '/automation/welcome',
+								translate: 'MENU.WELCOME',
+							},
+							{
+								page: '/automation/keywords',
+								translate: 'MENU.KEYWORD',
+							},
+							{
+								page: '/automation/sequence',
+								translate: 'MENU.SEQUENCE',
+							},
+							{
+								page: '/automation/rules',
+								translate: 'MENU.RULE',
+								badge: {type: 'm-badge--success', value: 'BETA'},
+							},
+						]
+					},
+					{
+						title: 'Flows',
+						root: true,
+						page: '/cms',
+						icon: 'flaticon-business',
+						translate: 'MENU.FLOWS'
+					},
+					{
+						title: 'Settings',
+						root: true,
+						page: '/settings',
+						icon: 'flaticon-settings',
+						translate: 'MENU.SETTINGS'
+					},
+					{
+						title: 'Templates',
+						root: true,
+						page: '/templates',
+						icon: 'flaticon-interface-2',
+						translate: 'MENU.TEMPLATES'
+					},
 					{
 						title: 'Layout Builder',
 						root: true,

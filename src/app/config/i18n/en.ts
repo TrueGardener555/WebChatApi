@@ -11,7 +11,26 @@ export const locale = {
 			CREATE_POST: 'Create New Post',
 			REPORTS: 'Reports',
 			APPS: 'Apps',
-			DASHBOARD: 'Dashboard'
+			DASHBOARD: 'Dashboard',
+			AUDIENCE: 'Audience',
+			LIVECHAT: 'Live Chat',
+			GROWTHTOOL: 'Growth Tools',
+			BROADCASTING: 'Broadcasting',
+			BROADCAST: 'Broadcasts',
+			AUTOPOST: 'AutoPosting',
+			AUTOMATION: 'Automation',
+			MAINMENU: 'Main Menu',
+			DEFAULTREPLY: 'Default Reply',
+			WELCOME: 'Welcome Message',
+			KEYWORD: 'Keywords',
+			SEQUENCE: 'Sequences',
+			RULE: 'Rules',
+			FLOWS: 'Flows',
+			SETTINGS: 'Settings',
+			TEMPLATES: 'Templates',
+			PROFILE: 'My Profile',
+			HELP: 'Help',
+			
 		},
 		AUTH: {
 			GENERAL: {
