@@ -29,7 +29,7 @@ import { CustomersDataSource } from './_core/models/data-sources/customers.datas
 export class CustomersListComponent implements OnInit {
 	// Table fields
 	dataSource: CustomersDataSource;
-	displayedColumns = ['select', 'id', 'lastName', 'firstName', 'email', 'gender', 'status', 'type', 'actions'];
+	displayedColumns = ['lastName', 'firstName', 'email', 'gender', 'status', 'type'];
 	@ViewChild(MatPaginator) paginator: MatPaginator;
 	@ViewChild(MatSort) sort: MatSort;
 	// Filter fields
