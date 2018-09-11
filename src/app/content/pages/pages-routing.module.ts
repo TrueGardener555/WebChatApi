@@ -41,6 +41,11 @@ const routes: Routes = [
 				path: 'inner',
 				component: InnerComponent
 			},
+			{
+				path: 'subscribers',
+				loadChildren: './'
+			},
+			
 		]
 	},
 	{
