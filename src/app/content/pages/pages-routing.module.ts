@@ -6,6 +6,7 @@ import { NgxPermissionsGuard } from 'ngx-permissions';
 import { ProfileComponent } from './header/profile/profile.component';
 import { ErrorPageComponent } from './snippets/error-page/error-page.component';
 import { InnerComponent } from "./components/inner/inner.component";
+import { CustomersListComponent } from './subscriber/customers-list.component';
 
 const routes: Routes = [
 	{
@@ -43,7 +44,7 @@ const routes: Routes = [
 			},
 			{
 				path: 'subscribers',
-				loadChildren: './'
+				component: CustomersListComponent
 			},
 			
 		]

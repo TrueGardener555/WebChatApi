@@ -7,15 +7,12 @@ import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
 import { fromEvent, merge, forkJoin } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 // Services
-import { CustomersService } from '../../_core/services/index';
-import { LayoutUtilsService, MessageType } from '../../_core/utils/layout-utils.service';
-import { HttpUtilsService } from '../../_core/utils/http-utils.service';
+import { CustomersService } from './_core/services/index';
+import { LayoutUtilsService, MessageType } from './_core/utils/layout-utils.service';
 // Models
-import { QueryParamsModel } from '../../_core/models/query-models/query-params.model';
-import { CustomerModel } from '../../_core/models/customer.model';
-import { CustomersDataSource } from '../../_core/models/data-sources/customers.datasource';
-// Components
-import { CustomerEditDialogComponent } from '../customer-edit/customer-edit.dialog.component';
+import { QueryParamsModel } from './_core/models/query-models/query-params.model';
+import { CustomerModel } from './_core/models/customer.model';
+import { CustomersDataSource } from './_core/models/data-sources/customers.datasource';
 
 // Table with EDIT item in MODAL
 // ARTICLE for table with sort/filter/paginator
@@ -217,29 +214,6 @@ export class CustomersListComponent implements OnInit {
 					this.loadCustomersList();
 					this.selection.clear();
 				});
-		});
-	}
-
-	addCustomer() {
-		const newCustomer = new CustomerModel();
-		newCustomer.clear(); // Set all defaults fields
-		this.editCustomer(newCustomer);
-	}
-
-	/** Edit */
-	editCustomer(customer: CustomerModel) {
-		let saveMessageTranslateParam = 'ECOMMERCE.CUSTOMERS.EDIT.';
-		saveMessageTranslateParam += customer.id > 0 ? 'UPDATE_MESSAGE' : 'ADD_MESSAGE';
-		const _saveMessage = this.translate.instant(saveMessageTranslateParam);
-		const _messageType = customer.id > 0 ? MessageType.Update : MessageType.Create;
-		const dialogRef = this.dialog.open(CustomerEditDialogComponent, { data: { customer } });
-		dialogRef.afterClosed().subscribe(res => {
-			if (!res) {
-				return;
-			}
-
-			this.layoutUtilsService.showActionNotification(_saveMessage, _messageType, 10000, true, false);
-			this.loadCustomersList();
 		});
 	}
 
