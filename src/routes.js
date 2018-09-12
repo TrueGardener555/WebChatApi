@@ -21,13 +21,53 @@ const loadableRoutes = {
   '/empty': {
     component: loadable(() => import('pages/DefaultPages/EmptyPage')),
   },
-
-
   // Dashboards
   '/dashboard/alpha': {
     component: loadable(() => import('pages/Dashboard/DashboardAlphaPage')),
   },
-}
+  '/subscribers' : {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  },
+  '/chat': {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  },
+  '/growth-tools': {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  },
+  '/posting': {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  },
+  '/autoposting': {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  },
+  '/automation/menu/view': {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  },
+  '/automation/default': {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  },
+  '/automation/welcome': {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  },
+  '/automation/keywords': {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  },
+  '/sequence': {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  },
+  '/rules': {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  },
+  '/cms': {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  },
+  '/settings': {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  },
+  '/templates': {
+    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+  }
+};
 
 class Routes extends React.Component {
   timeoutId = null
