@@ -25,7 +25,7 @@ const loadableRoutes = {
   '/dashboard/alpha': {
     component: loadable(() => import('pages/Dashboard/DashboardAlphaPage')),
   },
-  '/subscribers' : {
+  '/subscribers': {
     component: loadable(() => import('pages/DefaultPages/EmptyPage')),
   },
   '/chat': {
@@ -66,8 +66,8 @@ const loadableRoutes = {
   },
   '/templates': {
     component: loadable(() => import('pages/DefaultPages/EmptyPage')),
-  }
-};
+  },
+}
 
 class Routes extends React.Component {
   timeoutId = null
