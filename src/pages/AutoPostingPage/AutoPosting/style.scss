@@ -1,0 +1,25 @@
+@import '../../../resources/mixins';
+
+.AutoPostingPage {
+
+    &__overall-data {
+        //border: 1px solid $gray-border;
+        border-radius: 4px;
+        padding: rem(7);
+        margin-bottom: rem(12);
+      }
+    
+      &__overall-data-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: table;
+        width: 100%;
+      }
+    
+      &__overall-data-item {
+        display: table-cell;
+        text-align: center;
+        font-weight: bold;
+      }
+}

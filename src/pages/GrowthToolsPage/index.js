@@ -1,11 +1,11 @@
 import React from 'react'
 import Page from 'components/LayoutComponents/Page'
 import Helmet from 'react-helmet'
-import DashboardAlpha from './DashboardAlpha'
+import GrowthTools from './GrowthTools'
 
-class DashboardAlphaPage extends React.Component {
+class GrowthToolsPage extends React.Component {
   static defaultProps = {
-    pathName: 'Dashboard',
+    pathName: 'Audience Page',
     roles: ['agent', 'administrator'],
   }
 
@@ -13,11 +13,11 @@ class DashboardAlphaPage extends React.Component {
     const props = this.props
     return (
       <Page {...props}>
-        <Helmet title="Dashboard" />
-        <DashboardAlpha />
+        <Helmet title="Audience Page" />
+        <GrowthTools />
       </Page>
     )
   }
 }
 
-export default DashboardAlphaPage
+export default GrowthToolsPage

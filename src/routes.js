@@ -26,37 +26,37 @@ const loadableRoutes = {
     component: loadable(() => import('pages/Dashboard/DashboardAlphaPage')),
   },
   '/subscribers': {
-    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+    component: loadable(() => import('pages/AudiencePage')),
   },
   '/chat': {
-    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+    component: loadable(() => import('pages/LiveChatPage')),
   },
   '/growth-tools': {
-    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+    component: loadable(() => import('pages/GrowthToolsPage')),
   },
   '/posting': {
-    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+    component: loadable(() => import('pages/PostingPage')),
   },
   '/autoposting': {
-    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+    component: loadable(() => import('pages/AutoPostingPage')),
   },
   '/automation/menu/view': {
-    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+    component: loadable(() => import('pages/Automation/MainMenuPage')),
   },
   '/automation/default': {
-    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+    component: loadable(() => import('pages/Automation/DefaultReplyPage')),
   },
   '/automation/welcome': {
-    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+    component: loadable(() => import('pages/Automation/WelcomeMessagePage')),
   },
   '/automation/keywords': {
-    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+    component: loadable(() => import('pages/Automation/KeywordsPage')),
   },
   '/sequence': {
-    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+    component: loadable(() => import('pages/Automation/SequencesPage')),
   },
   '/rules': {
-    component: loadable(() => import('pages/DefaultPages/EmptyPage')),
+    component: loadable(() => import('pages/Automation/RulesPage')),
   },
   '/cms': {
     component: loadable(() => import('pages/DefaultPages/EmptyPage')),
