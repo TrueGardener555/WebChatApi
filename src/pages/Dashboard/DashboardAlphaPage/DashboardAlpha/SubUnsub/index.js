@@ -2,8 +2,8 @@ import React from 'react'
 import C3Chart from 'react-c3js'
 import { Form, DatePicker, TimePicker, Table, Card } from 'antd'
 
-const FormItem = Form.Item;
-const RangePicker = DatePicker.RangePicker;
+const FormItem = Form.Item
+const RangePicker = DatePicker.RangePicker
 
 //Subscriber's and Unsubscriber's Data
 let stackedBar = {
@@ -16,7 +16,12 @@ let stackedBar = {
     groups: [['Subscribers', 'Unsubscribers']],
   },
   color: {
-    pattern: ['rgba(255,99,132,1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)',],
+    pattern: [
+      'rgba(255,99,132,1)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+    ],
   },
   bar: {
     width: {
@@ -37,17 +42,17 @@ let stackedBar = {
 
 @Form.create()
 class SubUnsub extends React.Component {
-  handleSubmit = (e) => {
-    e.preventDefault();
+  handleSubmit = e => {
+    e.preventDefault()
 
     this.props.form.validateFields((err, fieldsValue) => {
       if (err) {
-        return;
+        return
       }
 
       // Should format date value before submit.
-      const rangeValue = fieldsValue['range-picker'];
-      const rangeTimeValue = fieldsValue['range-time-picker'];
+      const rangeValue = fieldsValue['range-picker']
+      const rangeTimeValue = fieldsValue['range-time-picker']
       const values = {
         ...fieldsValue,
         'date-picker': fieldsValue['date-picker'].format('YYYY-MM-DD'),
@@ -59,28 +64,28 @@ class SubUnsub extends React.Component {
           rangeTimeValue[1].format('YYYY-MM-DD HH:mm:ss'),
         ],
         'time-picker': fieldsValue['time-picker'].format('HH:mm:ss'),
-      };
-      console.log('Received values of form: ', values);
-    });
+      }
+      console.log('Received values of form: ', values)
+    })
   }
   render() {
-    const { getFieldDecorator } = this.props.form;
+    const { getFieldDecorator } = this.props.form
     const rangeConfig = {
       rules: [{ type: 'array', required: true, message: 'Please select time!' }],
-    };
+    }
     return (
-      <div>  
+      <div>
         <div>
           <Form>
             <FormItem>
               {getFieldDecorator('range-picker', rangeConfig)(
-              <RangePicker style={{float: 'right'}}/>
+                <RangePicker style={{ float: 'right' }} />,
               )}
             </FormItem>
           </Form>
         </div>
         <div className="row">
-          <div className="col-lg-2"/>
+          <div className="col-lg-2" />
           <div className="col-lg-8">
             <C3Chart
               data={stackedBar.data}
@@ -89,9 +94,8 @@ class SubUnsub extends React.Component {
               grid={stackedBar.grid}
             />
           </div>
-          <div className="col-lg-2"/>
-        </div>   
-      
+          <div className="col-lg-2" />
+        </div>
       </div>
     )
   }

@@ -10,13 +10,16 @@ const Search = Input.Search
 const actionsMenu = (
   <Menu>
     <Menu.Item key="1">
-      <Icon style={{ marginRight: 3 }} type="sound" />Mute
+      <Icon style={{ marginRight: 3 }} type="sound" />
+      Mute
     </Menu.Item>
     <Menu.Item key="2">
-      <Icon style={{ marginRight: 3 }} type="delete" />Delete chat
+      <Icon style={{ marginRight: 3 }} type="delete" />
+      Delete chat
     </Menu.Item>
     <Menu.Item key="3">
-      <Icon style={{ marginRight: 3 }} type="setting" />Settings
+      <Icon style={{ marginRight: 3 }} type="setting" />
+      Settings
     </Menu.Item>
   </Menu>
 )
@@ -96,7 +99,9 @@ class LiveChat extends React.Component {
             </div>
             <div className="messaging__tabs">
               <Tabs defaultActiveKey="0" tabPosition={'left'} onChange={this.changeChat}>
-                {chatsData.map((chat, index) => <TabPane tab={chatTab(chat)} key={index} />)}
+                {chatsData.map((chat, index) => (
+                  <TabPane tab={chatTab(chat)} key={index} />
+                ))}
               </Tabs>
             </div>
           </div>
@@ -140,14 +145,19 @@ class LiveChat extends React.Component {
                 <strong>{selectedChatData.companionName}</strong>
               </h4>
             </div>
-            <div className = "row Card">
+            <div className="row Card">
               <div className="messaging__item-thumb">
-                <Avatar src={selectedChatData.companionImg} size="110" border="true" borderColor="white" />
+                <Avatar
+                  src={selectedChatData.companionImg}
+                  size="110"
+                  border="true"
+                  borderColor="white"
+                />
               </div>
               <div className="col-xl-6">
-                <p >{selectedChatData.companionName}</p>
-                <p >{selectedChatData.companionName}</p>
-                <p >
+                <p>{selectedChatData.companionName}</p>
+                <p>{selectedChatData.companionName}</p>
+                <p>
                   <p>{selectedChatData.companionName}</p>
                   views
                 </p>
@@ -175,7 +185,7 @@ class LiveChat extends React.Component {
               <div className="card-header">
                 <div className="utils__title">Opted In through</div>
                 <div className="utils__titleDescription">
-                  <Tag color="geekblue">keyword growth tools</Tag>  
+                  <Tag color="geekblue">keyword growth tools</Tag>
                 </div>
               </div>
             </div>

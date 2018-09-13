@@ -92,12 +92,7 @@ class GrowthTools extends React.Component {
           </div>
         </div>
         <div className="card-body">
-          <Table
-            columns={columns}
-            dataSource={data}
-            bordered
-            size="large"
-          />
+          <Table columns={columns} dataSource={data} bordered size="large" />
         </div>
       </section>
     )

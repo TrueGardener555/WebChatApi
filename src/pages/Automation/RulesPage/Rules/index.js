@@ -13,8 +13,7 @@ class Rules extends React.Component {
           </div>
         </div>
         <div className="card-body">
-          <p>
-          </p>
+          <p />
         </div>
       </section>
     )

@@ -4,8 +4,8 @@ import Chartist from 'chartist'
 import { Line, Bar, Radar, Polar, Pie, Doughnut } from 'react-chartjs-2'
 import { Form, DatePicker, TimePicker, Table, Card } from 'antd'
 
-const FormItem = Form.Item;
-const RangePicker = DatePicker.RangePicker;
+const FormItem = Form.Item
+const RangePicker = DatePicker.RangePicker
 
 //Net Subscriber's Data
 const netData = {
@@ -49,20 +49,19 @@ const netOptions = {
   },
 }
 
-
 @Form.create()
 class Net extends React.Component {
-  handleSubmit = (e) => {
-    e.preventDefault();
+  handleSubmit = e => {
+    e.preventDefault()
 
     this.props.form.validateFields((err, fieldsValue) => {
       if (err) {
-        return;
+        return
       }
 
       // Should format date value before submit.
-      const rangeValue = fieldsValue['range-picker'];
-      const rangeTimeValue = fieldsValue['range-time-picker'];
+      const rangeValue = fieldsValue['range-picker']
+      const rangeTimeValue = fieldsValue['range-time-picker']
       const values = {
         ...fieldsValue,
         'date-picker': fieldsValue['date-picker'].format('YYYY-MM-DD'),
@@ -74,34 +73,33 @@ class Net extends React.Component {
           rangeTimeValue[1].format('YYYY-MM-DD HH:mm:ss'),
         ],
         'time-picker': fieldsValue['time-picker'].format('HH:mm:ss'),
-      };
-      console.log('Received values of form: ', values);
-    });
+      }
+      console.log('Received values of form: ', values)
+    })
   }
   render() {
-    const { getFieldDecorator } = this.props.form;
+    const { getFieldDecorator } = this.props.form
     const rangeConfig = {
       rules: [{ type: 'array', required: true, message: 'Please select time!' }],
-    };
+    }
     return (
-      <div>  
+      <div>
         <div>
           <Form>
             <FormItem>
               {getFieldDecorator('range-picker', rangeConfig)(
-              <RangePicker style={{float: 'right'}}/>
+                <RangePicker style={{ float: 'right' }} />,
               )}
             </FormItem>
           </Form>
         </div>
         <div className="row">
-          <div className="col-lg-2"/>
+          <div className="col-lg-2" />
           <div className="col-lg-8">
             <Bar data={netData} options={netOptions} width={400} height={200} />
           </div>
-          <div className="col-lg-2"/>
-        </div>   
-      
+          <div className="col-lg-2" />
+        </div>
       </div>
     )
   }

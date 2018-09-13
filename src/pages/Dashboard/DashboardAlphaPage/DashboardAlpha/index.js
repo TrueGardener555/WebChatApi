@@ -4,7 +4,6 @@ import ChartCard from 'components/CleanComponents/ChartCard'
 import ChartistGraph from 'react-chartist'
 import Chartist from 'chartist'
 
-
 import { Form, Button, Input, Icon, Tabs, Select, DatePicker, TimePicker, Table, Card } from 'antd'
 import data from './data.json'
 import 'c3/c3.css'
@@ -13,44 +12,42 @@ import Active from './Active'
 import Net from './Net'
 import SubUnsub from './SubUnsub'
 
-const FormItem = Form.Item;
-const TabPane = Tabs.TabPane;
-const Option = Select.Option;
-const MonthPicker = DatePicker.MonthPicker;
-const RangePicker = DatePicker.RangePicker;
+const FormItem = Form.Item
+const TabPane = Tabs.TabPane
+const Option = Select.Option
+const MonthPicker = DatePicker.MonthPicker
+const RangePicker = DatePicker.RangePicker
 
 //Active Subscriber's Data
 let activeData = {
-  labels: [1,2,3,4,5,6,7],
+  labels: [1, 2, 3, 4, 5, 6, 7],
   series: [[5514, 6685, 6985, 7584, 8985, 9954, 10111]],
 }
 let activeOptions = {
-    low: 0,
-    showArea: true,
-    showLine: true,
-    showPoint: true,
-    fullWidth: true,
-    axisX: {
-      showLabel: true,
-      showGrid: false
-    }
+  low: 0,
+  showArea: true,
+  showLine: true,
+  showPoint: true,
+  fullWidth: true,
+  axisX: {
+    showLabel: true,
+    showGrid: false,
+  },
 }
-
-
 
 @Form.create()
 class DashboardAlpha extends React.Component {
-  handleSubmit = (e) => {
-    e.preventDefault();
+  handleSubmit = e => {
+    e.preventDefault()
 
     this.props.form.validateFields((err, fieldsValue) => {
       if (err) {
-        return;
+        return
       }
 
       // Should format date value before submit.
-      const rangeValue = fieldsValue['range-picker'];
-      const rangeTimeValue = fieldsValue['range-time-picker'];
+      const rangeValue = fieldsValue['range-picker']
+      const rangeTimeValue = fieldsValue['range-time-picker']
       const values = {
         ...fieldsValue,
         'date-picker': fieldsValue['date-picker'].format('YYYY-MM-DD'),
@@ -62,17 +59,17 @@ class DashboardAlpha extends React.Component {
           rangeTimeValue[1].format('YYYY-MM-DD HH:mm:ss'),
         ],
         'time-picker': fieldsValue['time-picker'].format('HH:mm:ss'),
-      };
-      console.log('Received values of form: ', values);
-    });
+      }
+      console.log('Received values of form: ', values)
+    })
   }
   render() {
-    const { getFieldDecorator } = this.props.form;
+    const { getFieldDecorator } = this.props.form
     const rangeConfig = {
       rules: [{ type: 'array', required: true, message: 'Please select time!' }],
-    };
+    }
     return (
-      <div>  
+      <div>
         {/* <div style={{ maxWidth: 865 }}> */}
         <div>
           <div>
@@ -82,19 +79,19 @@ class DashboardAlpha extends React.Component {
             <div className="card-body">
               <Tabs defaultActiveKey="1">
                 <TabPane tab="Active Subscribers" key="1">
-                  <Active /> 
+                  <Active />
                 </TabPane>
                 <TabPane tab="Net Subscribers" key="2">
                   <Net />
                 </TabPane>
                 <TabPane tab="Subscribers & Unsubscribers" key="3">
                   <SubUnsub />
-                </TabPane>  
-              </Tabs>           
+                </TabPane>
+              </Tabs>
             </div>
           </div>
-          <div className = "row text-center">
-            <div className = "col-xl-4">
+          <div className="row text-center">
+            <div className="col-xl-4">
               <ChartCard
                 title={'Subscribers'}
                 amount={'47778'}
@@ -113,7 +110,7 @@ class DashboardAlpha extends React.Component {
                 }}
               />
             </div>
-            <div className = "col-xl-4">
+            <div className="col-xl-4">
               <ChartCard
                 title={'Unsubscribers'}
                 amount={'1070'}
@@ -132,7 +129,7 @@ class DashboardAlpha extends React.Component {
                 }}
               />
             </div>
-            <div className = "col-xl-4">
+            <div className="col-xl-4">
               <ChartCard
                 title={'Net Subscribers'}
                 amount={'46708'}
@@ -156,25 +153,29 @@ class DashboardAlpha extends React.Component {
           <div>
             <h2> Inspirations For Your Bot</h2>
           </div>
-          <div className = "row">
-            <div className = "col-xl-6">
+          <div className="row">
+            <div className="col-xl-6">
               <Card
                 style={{ marginTop: 16 }}
                 title="ManyChat Free Video Course"
                 extra={<a href="#">More</a>}
                 actions={[<span>Read</span>]}
               >
-                Master the cutting-edge field of Messenger Marketing and learn to use chatbots to connect with your audience, delight your customers, and drive new sales for your business.
+                Master the cutting-edge field of Messenger Marketing and learn to use chatbots to
+                connect with your audience, delight your customers, and drive new sales for your
+                business.
               </Card>
             </div>
-            <div className = "col-xl-6">
+            <div className="col-xl-6">
               <Card
                 style={{ marginTop: 16 }}
                 title="7 Ways to Implement Messenger Marketing into Your Business Today"
                 extra={<a href="#">More</a>}
                 actions={[<span>Read</span>]}
               >
-                Messenger Marketing is a channel that, when used correctly, opens up infinite doors of communication and engagement with your audience, in turn driving more leads and sales.
+                Messenger Marketing is a channel that, when used correctly, opens up infinite doors
+                of communication and engagement with your audience, in turn driving more leads and
+                sales.
               </Card>
             </div>
           </div>

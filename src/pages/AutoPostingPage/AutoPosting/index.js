@@ -13,13 +13,11 @@ class AutoPosting extends React.Component {
             <i className="icmn-facebook" />
             Creta
           </div>
-          <div className="utils__titleDescription">
-              Account: cretamoda
-          </div>
+          <div className="utils__titleDescription">Account: cretamoda</div>
         </div>
         <div className="card-body">
           <p>
-          <div className="AutoPostingPage__overall-data">
+            <div className="AutoPostingPage__overall-data">
               <ul className="AutoPostingPage__overall-data-list">
                 <li className="AutoPostingPage__overall-data-item">
                   <a href="javascript: void(0);" className="AutoPostingPage__overall-data-link">
