@@ -21,7 +21,8 @@ class Login extends React.Component {
             <div className="col-lg-12">
               <div className="main-login__header__logo">
                 <a href="javascript: void(0);">
-                  <img src="resources/images/login/logo.png" alt="Clean UI Admin Template" />
+                  {/* <img src="resources/images/login/logo.png" alt="Clean UI Admin Template" /> */}
+                  <h2>Creta Site</h2>
                 </a>
               </div>
             </div>
@@ -32,11 +33,10 @@ class Login extends React.Component {
             <div className="col-xl-12">
               <div className="main-login__block__promo text-black text-center">
                 <h1 className="mb-3 text-black">
-                  <strong>WELCOME TO CLEAN UI ADMIN TEMPLATE</strong>
+                  <strong>Welcome to Creta WebChat Site</strong>
                 </h1>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s.
+                  This site will help you to increase your customers.
                 </p>
               </div>
               <div className="main-login__block__inner">
@@ -45,20 +45,19 @@ class Login extends React.Component {
                 </div>
                 <div className="main-login__block__sidebar">
                   <h4 className="main-login__block__sidebar__title text-white">
-                    <strong>Agile Dev Meetup</strong>
+                    <strong>CretaModa Site</strong>
                     <br />
-                    <span>August 2018</span>
+                    <span>September 2018</span>
                   </h4>
                   <div className="main-login__block__sidebar__item">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                    Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    This is helpful site :D
                   </div>
                   <div className="main-login__block__sidebar__item">
-                    Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    It will help you alot
                   </div>
                   <div className="main-login__block__sidebar__place">
                     <i className="icmn-location mr-3" />
-                    New York, USA
+                    Argentina
                   </div>
                 </div>
               </div>

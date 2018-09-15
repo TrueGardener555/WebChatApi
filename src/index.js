@@ -39,7 +39,7 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <LocaleProvider locale={enGB}>
         <div>
-          <Helmet titleTemplate="Clean UI - %s" />
+          <Helmet titleTemplate="CretaModa Chat - %s" />
           <Layout />
         </div>
       </LocaleProvider>
