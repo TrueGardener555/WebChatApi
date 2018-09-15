@@ -23,11 +23,11 @@ class MainMenu extends React.Component {
     comments: data.comments,
   }
   onSelect = (selectedKeys, info) => {
-    console.log('selected', selectedKeys, info);
+    console.log('selected', selectedKeys, info)
   }
 
   render() {
-    let {comments} = this.state
+    let { comments } = this.state
     return (
       <section>
         <div className="card-header">
@@ -35,8 +35,7 @@ class MainMenu extends React.Component {
             <strong>MainMenu Page</strong>
           </div>
         </div>
-        <div className="card-body">
-        </div>
+        <div className="card-body" />
         <div className="row">
           <div className="col-xl-6">
             <div className="blog-feed__comments mb-4">
@@ -91,8 +90,8 @@ class MainMenu extends React.Component {
                                         <small className="text-muted">{subComment.date}</small>
                                       </div>
                                       <div className="pull-right">
-                                      <a href="javascript: void(0);" className="mr-3">
-                                        <i className="icmn-heart mr-2" />
+                                        <a href="javascript: void(0);" className="mr-3">
+                                          <i className="icmn-heart mr-2" />
                                           {postComment.clickCount > 0 && (
                                             <span>{postComment.clickCount + ' Likes'}</span>
                                           )}
@@ -102,9 +101,7 @@ class MainMenu extends React.Component {
                                         </a>
                                       </div>
                                     </div>
-                                    <div
-                                      dangerouslySetInnerHTML={{ __html: subComment.content }}
-                                    />
+                                    <div dangerouslySetInnerHTML={{ __html: subComment.content }} />
                                   </div>
                                 </div>
                               ))}
@@ -118,9 +115,7 @@ class MainMenu extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-xl-6">
-                                            HAHA
-          </div>
+          <div className="col-xl-6">HAHA</div>
         </div>
       </section>
     )

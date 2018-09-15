@@ -35,9 +35,7 @@ class Login extends React.Component {
                 <h1 className="mb-3 text-black">
                   <strong>Welcome to Creta WebChat Site</strong>
                 </h1>
-                <p>
-                  This site will help you to increase your customers.
-                </p>
+                <p>This site will help you to increase your customers.</p>
               </div>
               <div className="main-login__block__inner">
                 <div className="main-login__block__form">
@@ -49,12 +47,8 @@ class Login extends React.Component {
                     <br />
                     <span>September 2018</span>
                   </h4>
-                  <div className="main-login__block__sidebar__item">
-                    This is helpful site :D
-                  </div>
-                  <div className="main-login__block__sidebar__item">
-                    It will help you alot
-                  </div>
+                  <div className="main-login__block__sidebar__item">This is helpful site :D</div>
+                  <div className="main-login__block__sidebar__item">It will help you alot</div>
                   <div className="main-login__block__sidebar__place">
                     <i className="icmn-location mr-3" />
                     Argentina

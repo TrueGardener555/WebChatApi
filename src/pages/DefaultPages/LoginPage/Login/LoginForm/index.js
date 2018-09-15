@@ -36,10 +36,8 @@ class LoginForm extends React.Component {
           <strong>Please log in</strong>
         </h4>
         <br />
-        <div className="mb-2">
-        </div>
-        <div className="mb-4">
-        </div>
+        <div className="mb-2" />
+        <div className="mb-4" />
         <Form layout="vertical" hideRequiredMark onSubmit={this.onSubmit(isSubmitForm)}>
           <FormItem label="Email">
             {form.getFieldDecorator('username', {

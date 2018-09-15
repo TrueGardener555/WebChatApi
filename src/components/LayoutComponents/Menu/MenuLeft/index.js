@@ -204,7 +204,6 @@ class MenuLeft extends React.Component {
               <h2>Creta Menu</h2>
             </div>
           )}
-          
         </div>
         <Scrollbars
           autoHide
