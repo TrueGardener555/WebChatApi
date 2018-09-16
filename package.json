@@ -30,11 +30,14 @@
     "chartist-plugin-tooltip": "^0.0.11",
     "classnames": "^2.2.5",
     "enquire-js": "^0.2.1",
+    "express": "^4.16.3",
+    "express-favicon": "^2.0.1",
     "immutability-helper": "^2.7.0",
     "immutable": "^3.8.2",
     "lodash": "^4.17.10",
     "moment": "^2.19.3",
     "moment-timezone": "^0.5.14",
+    "path": "^0.12.7",
     "peity-react": "^0.0.7",
     "prop-types": "^15.5.10",
     "rc-drawer": "^1.4.4",
@@ -59,7 +62,7 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "node server.js",
     "build": "react-app-rewired build",
     "eject": "react-scripts eject",
     "precommit": "lint-staged"
